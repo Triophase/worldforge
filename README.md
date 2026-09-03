@@ -1,5 +1,7 @@
 # Worldforge
 
+![Worldforge screenshot — a bouncing ball demo scene with a platform, transform gizmo, and properties panel](docs/images/screenshot.png)
+
 A browser-based, real-time-physics CAD/simulation tool: place built-in
 shapes and mechanical parts (or upload your own `.glb`/`.gltf`/`.stl`/
 `.obj` models), connect them with joints, and simulate the result with
