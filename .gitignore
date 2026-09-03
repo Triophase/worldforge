@@ -1,0 +1,26 @@
+# Renamed to .gitignore on copy.
+
+# The GitLab PAT. Never `.env` — docker-compose passes `env_file: .env` into
+# application containers, where a token becomes a real environment variable
+# readable by anything that can read the process environment there.
+.env.gitlab
+.env
+
+# Editors and OS noise
+.DS_Store
+.idea/
+.vscode/
+
+# Dependencies and build output — nothing here is written during spec authoring,
+# but the repository becomes the application repository after the export.
+node_modules/
+vendor/
+dist/
+dist-ssr/
+*.local
+*.log
+*.tsbuildinfo
+
+# Agent build/spec scaffolding — not part of the shipped application.
+.ai/
+.claude/

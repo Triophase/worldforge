@@ -1,0 +1,32 @@
+.field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.axisLabel {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  width: 12px;
+  flex-shrink: 0;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  background: var(--color-panel-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  padding: var(--space-1) var(--space-2);
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -1px;
+}

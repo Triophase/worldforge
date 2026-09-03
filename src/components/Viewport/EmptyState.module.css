@@ -1,0 +1,38 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  /* Overlay, not a modal — never blocks clicks reaching the toolbar or
+     side panels, which sit outside the viewport's own bounding box. */
+  pointer-events: none;
+}
+
+.overlay > * {
+  pointer-events: auto;
+}
+
+.message {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.demos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.demosLabel {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

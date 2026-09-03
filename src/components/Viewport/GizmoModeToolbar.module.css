@@ -1,0 +1,24 @@
+.toolbar {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-panel);
+}
+
+/**
+ * M8.5/§9's "not color alone" rule: every mode button shows the exact
+ * same icon regardless of which is active, so the background swap was
+ * the only signal at all — an inset outline ring adds a real boundary/
+ * shape cue (distinct from `Button`'s own `:focus-visible` ring, which
+ * uses a positive `outline-offset` and only appears on keyboard focus,
+ * not on the currently-active mode), layered on top of the color cue.
+ */
+.button[aria-pressed='true'] {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  outline: 2px solid var(--color-text);
+  outline-offset: -2px;
+}

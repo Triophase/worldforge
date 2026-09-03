@@ -1,0 +1,126 @@
+.panel {
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.list {
+  flex: 1;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.row,
+.rowSelected {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.row {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.row:hover {
+  background: var(--color-panel-bg-raised);
+}
+
+.rowSelected {
+  background: var(--color-panel-bg-raised);
+  color: var(--color-text);
+}
+
+.jointRow,
+.jointRowSelected {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-1) var(--space-2) var(--space-1) calc(var(--space-2) + 14px);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.jointRow {
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.jointRow:hover {
+  background: var(--color-panel-bg-raised);
+}
+
+.jointRowSelected {
+  background: var(--color-panel-bg-raised);
+  color: var(--color-text);
+}
+
+.jointRowSelected .indicator {
+  background: var(--color-accent);
+}
+
+.indicator {
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: transparent;
+  flex: none;
+}
+
+.rowSelected .indicator {
+  background: var(--color-accent);
+}
+
+.rowLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowInput {
+  flex: 1;
+  min-width: 0;
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  padding: 1px var(--space-1);
+  box-sizing: border-box;
+}

@@ -1,0 +1,77 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.assets {
+  flex: none;
+  min-width: 0;
+}
+
+.properties {
+  flex: none;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.hierarchySlot {
+  flex: 0 0 40%;
+  min-height: 0;
+}
+
+.propertiesSlot {
+  flex: 1;
+  min-height: 0;
+}
+
+/**
+ * M8.4/§28: closed-by-default overlay drawers at narrow widths — fixed
+ * position, so they never participate in the flex layout `.body` uses
+ * and can never compress `ViewportRegion`'s own rendered width.
+ * Translated off-screen + zero-opacity + non-interactive while closed,
+ * rather than `display: none`, so the open transition has something to
+ * animate (§22's 150-250ms range, via the one shared token).
+ */
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  background: var(--color-panel-bg);
+  box-shadow: var(--shadow-panel);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.assetsDrawer {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.propertiesDrawer {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.drawerOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}

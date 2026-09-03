@@ -1,0 +1,102 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-panel-bg);
+  border-bottom: 1px solid var(--color-border);
+  flex: none;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sceneName,
+.sceneNameInput {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+}
+
+.sceneName {
+  cursor: text;
+  transition: border-color var(--transition-fast);
+}
+
+.sceneName:hover {
+  border-color: var(--color-border);
+}
+
+.sceneNameInput {
+  border-color: var(--color-accent);
+  min-width: 140px;
+}
+
+.nonOwnerBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  background: var(--color-panel-bg-raised);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+}
+
+.saveError {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  background: var(--color-panel-bg-raised);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+}
+
+.saveErrorRetry {
+  flex-shrink: 0;
+}
+
+.menus {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.transport {
+  display: flex;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+/* M8.4: the Assets/Properties drawer-trigger icons, narrow-width only. */
+.drawerTriggers {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.viewMenu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 160px;
+}
+
+.menuItem {
+  justify-content: flex-start;
+  text-align: left;
+  border: none;
+  background: transparent;
+}
+
+.menuItem:hover {
+  background: var(--color-border);
+}

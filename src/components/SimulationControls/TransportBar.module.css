@@ -1,0 +1,52 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-panel-bg);
+  border-top: 1px solid var(--color-border);
+  flex: none;
+}
+
+.transport {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.speeds {
+  display: flex;
+  gap: var(--space-1);
+  margin-left: auto;
+}
+
+/**
+ * M8.5/§9's "not color alone" rule: the background swap alone isn't a
+ * sufficient signal for which speed is active — `font-weight` is a
+ * genuine glyph-shape difference, perceivable independent of color
+ * vision, layered on top of (not replacing) the existing color cue.
+ */
+.speedButton[aria-pressed='true'] {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 700;
+}
+
+/**
+ * §22: a subtle, non-instant transition on Play/Pause when the
+ * simulation phase changes — whichever of the two is currently the
+ * "next available action" (i.e. not disabled) gets a brief accent
+ * highlight, fading in/out over the same shared `--transition-fast`
+ * duration every other transition in the app uses. `Button`'s own base
+ * `:disabled` opacity fade (M0.2) already transitions too; this adds a
+ * second, more deliberate cue on top of it, not a replacement.
+ */
+.playPauseButton {
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.playPauseButton:not(:disabled) {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}

@@ -1,0 +1,12 @@
+.handle {
+  width: 4px;
+  flex: none;
+  cursor: col-resize;
+  background: transparent;
+  touch-action: none;
+}
+
+.handle:hover,
+.handle:active {
+  background: var(--color-accent);
+}
